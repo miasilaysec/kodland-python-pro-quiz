@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Python Pro Quiz{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 14px 28px;
+            border-bottom: 1px solid #e2e6ea;
+        }
+        .nav-links a {
+            margin-right: 18px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        .scores-box {
+            text-align: right;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 780px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .btn-green {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-green:hover {
+            background-color: #4cae4c;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="nav-links">
+            <a href="/">Sınav</a>
+            <a href="/vision">Görsel Algılama</a>
+        </div>
+        <div class="scores-box">
+            <div>Kişisel Yüksek Skor: <strong>{{ personal_best }}%</strong></div>
+            <div>Genel Yüksek Skor: <strong>{{ general_best }}%</strong></div>
+        </div>
+    </div>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        Sıla Yılmazer tarafından geliştirildi. Tüm hakları saklıdır.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Sınav Sonucu{% endblock %}
+
+{% block content %}
+<div style="text-align: center; padding: 16px 0;">
+    <h1 style="margin-top: 0;">Sınav Sonucu</h1>
+    <p style="color: #555;">Öğrenci: <strong>{{ username }}</strong> ({{ correct_count }} / {{ total_questions }} doğru)</p>
+
+    <p style="font-size: 22px; margin: 18px 0;">
+        Skorunuz: <span style="color: #5cb85c; font-weight: bold; font-size: 28px;">{{ score }}%</span>
+    </p>
+    <p style="font-size: 16px; margin: 10px 0;">
+        Kişisel Yüksek Skorunuz: <strong>{{ personal_best }}%</strong>
+    </p>
+    <p style="font-size: 16px; margin: 10px 0 24px 0;">
+        Genel Yüksek Skor: <strong>{{ general_best }}%</strong>
+    </p>
+
+    <a href="/" class="btn-green">Yeniden Dene</a>
+</div>
+{% endblock %}
